@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      
+      
+    <h:head>
+        <title>Register a Sale</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <style>
+             form{
+                height:300px;
+                width:600px;
+                padding-left: 20px;
+                padding-bottom: 10px;
+            }
+            h1{
+                padding-left: 10px;
+            }
+            #search-panel{
+                width: 200px;
+            }
+            
+        </style>
+       
+    </h:head>
+    <h:body>
+        <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">BudgetCars</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="index.faces">Home</a></li>
+            <li><a href="customer.faces">Customer</a></li>
+            <li><a href="car.faces">Cars</a></li>
+            <li><a href="sales.faces">Sales</a></li>
+            <li class="active"><a href="search.faces">Search</a></li>
+            <li><a href="delete.faces">Delete</a></li>
+          </ul>
+        </div>
+        </nav>
+        <h:form>
+            <div id="search-panel">
+                <h:inputText id="keyword" value="#{carController.keyword}">
+                    <f:passThroughAttribute value="placeholder" name="Search for sales, customer or cars"/> 
+                </h:inputText>
+                <br/>
+                <h:commandButton value="Search" action="#{carController.submit()}"/>
+            </div>
+            <br/>
+            <br/>
+            
+            
+        </h:form>
+    </h:body>
+</html>
